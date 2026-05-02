@@ -112,6 +112,4 @@ GSMA Open Gateway / CAMARA Hackathon
 
 TrustGate turns telecom network intelligence into a **real-time fraud prevention layer**, helping secure digital identity at the infrastructure level.
 
-```
-
 ---

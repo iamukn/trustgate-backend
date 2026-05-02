@@ -14,15 +14,6 @@ router = APIRouter()
         )
 async def trust_gate(data: PaymentInfo):
 
-    await evaluate_trust(data)
-    res = {
-            "simSwap": True,
-            "numbersVerification": True,
-            "deviceStatus": False,
-            "trustScore": 45,
-            "risk_level": "HIGH",
-            "action": "BLOCK"
-            #"payment_url": 'https://www.google.com'
-            }
+    trust_res = await evaluate_trust(data)
 
-    return res
+    return trust_res

@@ -7,4 +7,5 @@ class PaymentValidationResponse(BaseModel):
     deviceStatus: bool
     trustScore: int
     risk_level: str
+    action: str
     payment_url: Optional[str] = None

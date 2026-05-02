@@ -9,7 +9,7 @@ BASE_URL = os.environ.get('BASE_URL')
 
 async def device_status(phoneNumber: str) -> int:
 
-    risk_score = 0
+    reachable = False
 
     payload = {
             "device": {"phoneNumber": phoneNumber}
@@ -28,8 +28,6 @@ async def device_status(phoneNumber: str) -> int:
         status = response.json().get('connectivityStatus')
 
         if (status.upper() == 'CONNECTED_DATA' or status.upper() == 'CONNECTED_SMS'):
-            risk_score = 0
-        else:
-            risk_score += 15
+            reachable = True
 
-    return risk_score
+    return {'reachable': reachable}

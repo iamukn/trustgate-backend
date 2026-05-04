@@ -9,11 +9,13 @@ async def number_verify(phone: str):
 
     result = ''
 
+    numbers_headers = headers.copy()
+
     # get client credentials
     url = "{}/oauth2/v1/auth/clientcredentials".format(BASE_URL)
     response = requests.get(
         url,
-        headers=headers
+        headers=numbers_headers
             ) 
 
     # get client_id and client_secret
@@ -28,7 +30,7 @@ async def number_verify(phone: str):
         auth_token_url = '{}/.well-known/openid-configuration'.format(BASE_URL)
         res = requests.get(
                 auth_token_url,
-                headers=headers
+                headers=numbers_headers
                 )
 
         if res.status_code == 200:
@@ -77,7 +79,7 @@ async def number_verify(phone: str):
                         # Note this token should be generated from the call made from the clients device
                         # not the backend
 
-                        headers['Authorization'] = 'Bearer {}'.format(access_token)
+                        numbers_headers['Authorization'] = 'Bearer {}'.format(access_token)
 
                         payload = {
                             'phoneNumber': phone
@@ -88,7 +90,7 @@ async def number_verify(phone: str):
                         response = requests.post(
                                 numbers_verification_url,
                                 json=payload,
-                                headers=headers
+                                headers=numbers_headers
                                 )
 
                         if (response.status_code == 200):

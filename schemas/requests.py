@@ -4,6 +4,6 @@ from typing import Optional
 
 class PaymentInfo(BaseModel):
     phone: str
-    amount: Optional[float]
+    amount: Optional[float] = None
     email: Optional[EmailStr] = None
     name: Optional[str]=None

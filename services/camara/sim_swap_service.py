@@ -19,12 +19,12 @@ async def sim_swap(phone: str):
         "phoneNumber": phone,
         "maxAge": 240
             }
-
     response = requests.post(
             url,
             json=payload,
             headers=headers
             )
+
 
     if (response.status_code == 200):
         result = response.json()
@@ -48,5 +48,4 @@ async def sim_swap(phone: str):
 
                 # update the sim swap score
                 swap_score = compute_new_swap_score_based_on_days(get_days_swapped)
-
     return swap_score

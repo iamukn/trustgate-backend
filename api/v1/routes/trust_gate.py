@@ -14,6 +14,9 @@ router = APIRouter()
         )
 async def trust_gate(data: PaymentInfo):
 
-    trust_res = await evaluate_trust(data)
-
-    return trust_res
+    try:
+        trust_res = await evaluate_trust(data)
+        print(trust_res)
+        return trust_res
+    except Exception as e:
+        print('Error:', str(e))

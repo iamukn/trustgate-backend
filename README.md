@@ -34,8 +34,8 @@ Each signal contributes to a unified **TrustScore (0–100)**:
 
 - Create .env file in the root of the app with the below required variables
 
-BASE_URL="https://network-as-code.p-eu.rapidapi.com" 
-nokiaApiKey="youApiKeyFromNokiaPlatform"
+1. BASE_URL="https://network-as-code.p-eu.rapidapi.com" 
+2. nokiaApiKey="youApiKeyFromNokiaPlatform"
 
 - Create and start a Virtual Environment
 - Install app requirements

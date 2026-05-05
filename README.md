@@ -34,8 +34,8 @@ Each signal contributes to a unified **TrustScore (0–100)**:
 
 - Create .env file in the root of the app with the below required variables
 
-- BASE_URL="https://network-as-code.p-eu.rapidapi.com" 
-- nokiaApiKey="youApiKeyFromNokiaPlatform"
+BASE_URL="https://network-as-code.p-eu.rapidapi.com" 
+nokiaApiKey="youApiKeyFromNokiaPlatform"
 
 - Create and start a Virtual Environment
 - Install app requirements
@@ -44,7 +44,7 @@ Each signal contributes to a unified **TrustScore (0–100)**:
 ```bash
 python3 -m venv env
 source env/bin/activate
-pip install requirements.txt
+pip install -r requirements.txt
 uvicorn app.main:app --host 0.0.0.0 --port 8000
 ```
 

@@ -21,7 +21,6 @@ async def evaluate_trust(data):
     if (confidence.get('trustScore') >= 43):
         # call number api
         number_verify_risk = await number_verify(phone)
-        print(number_verify_risk)
         # recalculate_confidence
         confidence = calculate_risk(sim_swapped=sim_swap_risk,
                 device_match=device_status_reachability,

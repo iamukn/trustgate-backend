@@ -16,7 +16,6 @@ def calculate_risk(sim_swapped: int = 0,
 
     score = 0
 
-    print('SS: ', sim_swapped)
     if sim_swapped:
         res['simSwap'] = True
         score += sim_swapped

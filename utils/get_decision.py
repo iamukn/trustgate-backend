@@ -1,8 +1,9 @@
 # gets the fraud decision 
+from core.config import BLOCK, CHALLENGE
 
 def get_decision(score):
-    if score >= 60:
+    if score >= BLOCK:
         return "block"
-    elif score > 30:
+    elif score > CHALLENGE:
         return "challenge"
     return "allow"

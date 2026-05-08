@@ -5,6 +5,9 @@
 TrustGate is a lightweight fraud detection and trust scoring system built for the GSMA CAMARA Hackathon. It leverages telco APIs such as SIM Swap, Device Status, and Number Verification to assess the risk level of mobile transactions and user authentication attempts in real time.
 
 ---
+## 🌐 Frontend
+
+- Frontend Repository: [TrustGate Frontend](https://github.com/iamukn/trustgate-frontend)
 
 ## 🚀 Problem Statement
 
